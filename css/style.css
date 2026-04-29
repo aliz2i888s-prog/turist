@@ -1,4 +1,3 @@
-/* Общие стили */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
@@ -54,24 +53,37 @@ section h2 {
     margin-bottom: 15px;
 }
 
-/* Картинки */
+/* Карточки */
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
+    justify-content: center;
 }
 
-.gallery img {
+.card {
+    flex: 1 1 250px;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
     width: 100%;
-    max-width: 300px;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-.gallery img:hover {
+.card img:hover {
     transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #0077b6;
 }
 
 /* Лайтбокс */
@@ -90,6 +102,12 @@ section h2 {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
 }
 
 /* Футер */
@@ -112,4 +130,4 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-} 
+}
