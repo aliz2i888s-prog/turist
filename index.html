@@ -3,108 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelWorld — Агентство ярких путешествий</title>
+    <title>TravelWorld</title>
+    <!-- Подключение стилей -->
     <link rel="stylesheet" href="css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-
-    <header class="header">
-        <div class="container header__container">
-            <a href="#" class="logo">
-                <i class='bx bxs-paper-plane'></i> Travel<span>World</span>
-            </a>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li><a href="#about" class="nav__link">О компании</a></li>
-                    <li><a href="#services" class="nav__link">Услуги</a></li>
-                    <li><a href="#contacts" class="nav__link">Контакты</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <h1>TravelWorld ✈️</h1>
+        <nav>
+            <a href="#about">О компании</a>
+            <a href="#services">Услуги</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
     </header>
 
-    <main>
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about__content">
-                    <h2 class="section-title">О компании</h2>
-                    <p class="text-accent">Мы создаем маршруты, которые меняют жизнь.</p>
-                    <p class="about__description">
-                        <strong>TravelWorld</strong> — ведущее агентство в сфере индивидуального туризма. 
-                        Наша деятельность охватывает подбор эксклюзивных туров, бронирование лучших отелей 
-                        и полную поддержку клиента 24/7. Мы верим, что каждое путешествие — это новая глава вашей истории.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <section id="about">
+        <h2>О компании</h2>
+        <p>
+            Мы создаем маршруты, которые меняют жизнь.<br>
+            TravelWorld — ведущее агентство в сфере индивидуального туризма.
+            Наша деятельность охватывает подбор эксклюзивных туров, бронирование лучших отелей
+            и полную поддержку клиента 24/7.
+        </p>
+    </section>
 
-        <section id="services" class="services">
-            <div class="container">
-                <h2 class="section-title">Наши услуги</h2>
-                <div class="services__grid">
-                    
-                    <article class="card">
-                        <div class="card__img-box">
-                            <img src="assets/expeditions.jpg" alt="Экспедиции" class="card__photo">
-                        </div>
-                        <div class="card__icon"><i class='bx bx-landscape'></i></div>
-                        <h3 class="card__title">Экспедиции</h3>
-                        <p class="card__text">Активный отдых для тех, кто готов покорять вершины и открывать неизведанное.</p>
-                        <button class="btn btn--select" data-type="expeditions">Выбрать тур</button>
-                    </article>
+    <section id="services">
+        <h2>Наши услуги</h2>
+        <img src="assets/expeditions.jpg" alt="Экспедиции">
+        <img src="assets/guides.jpg" alt="Гиды">
+        <img src="assets/hotels.jpg" alt="Отели">
 
-                    <article class="card">
-                        <div class="card__img-box">
-                            <img src="assets/hotels.jpg" alt="Отели" class="card__photo">
-                        </div>
-                        <div class="card__icon"><i class='bx bx-building-house'></i></div>
-                        <h3 class="card__title">Premium Отели</h3>
-                        <p class="card__text">Только проверенные пятизвездочные резорты с высочайшим уровнем сервиса.</p>
-                        <button class="btn btn--select" data-type="hotels">Выбрать отель</button>
-                    </article>
+        <div class="buttons">
+            <button class="btn--select" data-type="expeditions">Выбрать экспедицию</button>
+            <button class="btn--select" data-type="hotels">Выбрать отель</button>
+            <button class="btn--select" data-type="guides">Выбрать гида</button>
+        </div>
+    </section>
 
-                    <article class="card">
-                        <div class="card__img-box">
-                            <img src="assets/guides.jpg" alt="Гиды" class="card__photo">
-                        </div>
-                        <div class="card__icon"><i class='bx bx-user-voice'></i></div>
-                        <h3 class="card__title">Авторские гиды</h3>
-                        <p class="card__text">Индивидуальные экскурсии с местными жителями, которые знают все секреты города.</p>
-                        <button class="btn btn--select" data-type="guides">Выбрать гида</button>
-                    </article>
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <p>Email: info@travelworld.com</p>
+        <p>Телефон: +7 (777) 123-45-67</p>
+    </section>
 
-                </div>
-            </div>
-        </section>
-
-        <section id="contacts" class="contacts">
-            <div class="container">
-                <h2 class="section-title">Наши контакты</h2>
-                <div class="contacts__grid">
-                    <div class="contact-card">
-                        <i class='bx bx-phone-call'></i>
-                        <p>+7 (900) 123-45-67</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class='bx bx-envelope'></i>
-                        <p>hello@travelworld.com</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <!-- Модальное окно -->
     <div id="modal" class="modal">
-        <div class="modal__window">
+        <div class="modal__content">
             <span class="modal__close">&times;</span>
-            <h3 id="modalTitle">Доступные варианты</h3>
+            <h3 id="modalTitle"></h3>
             <div id="optionsList"></div>
-            <div id="priceTag" class="modal__price"></div>
-            <button class="btn btn--main">Забронировать</button>
+            <p id="priceTag"></p>
         </div>
     </div>
 
+    <!-- Подключение скрипта -->
     <script src="js/main.js"></script>
 </body>
 </html>
