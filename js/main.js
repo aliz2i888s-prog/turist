@@ -6,11 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let mx = 0, my = 0, fx = 0, fy = 0;
     document.addEventListener("mousemove", e => {
         mx = e.clientX; my = e.clientY;
-        cursor.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
+        cursor.style.left = mx + "px";
+        cursor.style.top  = my + "px";
     });
     function animateFollower() {
-        fx += (mx - fx) * 0.12; fy += (my - fy) * 0.12;
-        follower.style.transform = `translate(${fx - 16}px, ${fy - 16}px)`;
+        fx += (mx - fx) * 0.12;
+        fy += (my - fy) * 0.12;
+        follower.style.left = fx + "px";
+        follower.style.top  = fy + "px";
         requestAnimationFrame(animateFollower);
     }
     animateFollower();
