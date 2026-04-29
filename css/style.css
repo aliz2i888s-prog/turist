@@ -1,90 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
-
-:root {
-    --primary: #003566;
-    --accent: #ffc300;
-    --white: #ffffff;
-    --bg-light: #f8f9fa;
-    --text: #2b2d42;
-    --gray: #6c757d;
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text);
-    line-height: 1.7;
-    background-color: var(--white);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f5f5f5;
+    color: #333;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-/ Header /
-.header {
-    background: var(--white);
-    padding: 15px 0;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-    position: sticky; top: 0; z-index: 100;
+/* Шапка */
+header {
+    background: #0077b6;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
 }
-.headercontainer { display: flex; justify-content: space-between; align-items: center; }
-.logo { text-decoration: none; font-family: 'Montserrat'; font-size: 1.6rem; color: var(--primary); font-weight: bold; }
-.logo span { color: var(--accent); }
-.navlist { display: flex; list-style: none; gap: 25px; }
-.navlink { text-decoration: none; color: var(--text); font-weight: 600; transition: 0.3s; }
-.navlink:hover { color: var(--accent); }
 
-/ Секции /
-section { padding: 80px 0; }
-.section-title { text-align: center; font-family: 'Montserrat'; font-size: 2.2rem; margin-bottom: 40px; color: var(--primary); }
-
-/ О компании /
-.about { background-color: var(--bg-light); text-align: center; }
-.aboutcontent { max-width: 800px; margin: 0 auto; }
-.text-accent { color: var(--primary); font-weight: 600; font-size: 1.2rem; margin-bottom: 15px; }
-.aboutdescription { color: var(--gray); font-size: 1.1rem; }
-
-/ Карточки услуг /
-.servicesgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-.card {
-    background: var(--white); border-radius: 20px; overflow: hidden;
-    text-align: center; padding-bottom: 30px; border: 1px solid #eee;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.4s;
+header h1 {
+    margin-bottom: 10px;
 }
-.card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
-.cardimg-box { width: 100%; height: 220px; overflow: hidden; }
-.cardphoto { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-.card:hover .cardphoto { transform: scale(1.1); }
-
-.cardicon { font-size: 2.5rem; color: var(--primary); margin: 20px 0 10px; }
-.cardtitle { font-family: 'Montserrat'; margin-bottom: 15px; }
-.cardtext { padding: 0 25px; color: var(--gray); margin-bottom: 25px; font-size: 0.95rem; }
-
-/ Кнопки /
-.btn {
-    padding: 10px 30px; border-radius: 50px; border: 2px solid var(--accent);
-    background: transparent; color: var(--text); font-weight: bold; cursor: pointer;
-    transition: 0.3s; text-transform: uppercase; font-size: 0.8rem;
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
-.btn:hover { background: var(--accent); color: var(--primary); }
-.btn--main { background: var(--primary); color: white; border: none; width: 100%; margin-top: 20px; }
 
-/ Модальное окно /
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
-.modalwindow { background: white; width: 90%; max-width: 450px; margin: 10% auto; padding: 40px; border-radius: 20px; position: relative; text-align: center; }
-.modalclose { position: absolute; right: 20px; top: 10px; font-size: 30px; cursor: pointer; }
-.modaloption { padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 10px; cursor: pointer; text-align: left; transition: 0.2s; }
-.modaloption:hover { background: #fffdf2; border-color: var(--accent); }
-.modalprice { font-size: 1.3rem; font-weight: bold; color: var(--primary); margin-top: 20px; }
+nav a:hover {
+    text-decoration: underline;
+}
 
-/ Контакты /
-.contactsgrid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
-.contact-card { text-align: center; }
-.contact-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+/* Секции */
+section {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
 
-@media (max-width: 768px) {
-    .headercontainer { flex-direction: column; gap: 15px; }
-    .section-title { font-size: 1.8rem; }
+section h2 {
+    margin-bottom: 15px;
+    color: #0077b6;
+}
+
+/* Картинки */
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Кнопки */
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px;
+    border: none;
+    background: #0077b6;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #023e8a;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__content {
+    background: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal__close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #0077b6;
+}
+
+.modal__option {
+    padding: 10px;
+    margin: 8px 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.modal__option:hover {
+    border-color: #0077b6;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    button {
+        flex: 100%;
+    }
+
+    .modal__content {
+        width: 95%;
+    }
 }
