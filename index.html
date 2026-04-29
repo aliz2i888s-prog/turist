@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelWorld</title>
-    <!-- Подключение стилей -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Шапка -->
     <header>
         <h1>TravelWorld ✈️</h1>
         <nav>
@@ -17,6 +17,7 @@
         </nav>
     </header>
 
+    <!-- О компании -->
     <section id="about">
         <h2>О компании</h2>
         <p>
@@ -27,36 +28,30 @@
         </p>
     </section>
 
+    <!-- Услуги -->
     <section id="services">
         <h2>Наши услуги</h2>
-        <img src="assets/expeditions.jpg" alt="Экспедиции">
-        <img src="assets/guides.jpg" alt="Гиды">
-        <img src="assets/hotels.jpg" alt="Отели">
-
-        <div class="buttons">
-            <button class="btn--select" data-type="expeditions">Выбрать экспедицию</button>
-            <button class="btn--select" data-type="hotels">Выбрать отель</button>
-            <button class="btn--select" data-type="guides">Выбрать гида</button>
+        <div class="gallery">
+            <img src="assets/expeditions.jpg" alt="Экспедиции">
+            <img src="assets/guides.jpg" alt="Гиды">
+            <img src="assets/hotels.jpg" alt="Отели">
         </div>
     </section>
 
+    <!-- Контакты -->
     <section id="contacts">
         <h2>Контакты</h2>
         <p>Email: info@travelworld.com</p>
         <p>Телефон: +7 (777) 123-45-67</p>
     </section>
 
-    <!-- Модальное окно -->
-    <div id="modal" class="modal">
-        <div class="modal__content">
-            <span class="modal__close">&times;</span>
-            <h3 id="modalTitle"></h3>
-            <div id="optionsList"></div>
-            <p id="priceTag"></p>
-        </div>
-    </div>
+    <!-- Футер -->
+    <footer>
+        <p>© 2026 TravelWorld. Все права защищены.</p>
+        <p>Email: info@travelworld.com | Тел: +7 (777) 123-45-67</p>
+    </footer>
 
-    <!-- Подключение скрипта -->
+    <!-- Скрипт -->
     <script src="js/main.js"></script>
 </body>
 </html>
