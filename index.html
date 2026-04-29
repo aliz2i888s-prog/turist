@@ -3,71 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelWorld</title>
+    <meta name="description" content="TravelWorld — индивидуальные путешествия по всему миру. Экспедиции, гиды, отели. Более 500 маршрутов, 12 лет опыта.">
+    <title>TravelWorld — Индивидуальный туризм</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Шапка -->
-    <header>
-        <h1>TravelWorld ✈️</h1>
-        <nav>
-            <a href="#about">О компании</a>
-            <a href="#services">Услуги</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">✕</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <header id="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">Travel<em>World</em></span>
+            </a>
+            <nav id="main-nav">
+                <a href="#about">О компании</a>
+                <a href="#services">Услуги</a>
+                <a href="#tours">Туры</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <a href="#contacts" class="header-cta">Оставить заявку</a>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </header>
 
-    <!-- О компании -->
-    <section id="about">
-        <h2>О компании</h2>
-        <p>
-            Мы создаем маршруты, которые меняют жизнь.  
-            TravelWorld — ведущее агентство в сфере индивидуального туризма.  
-            Наша деятельность охватывает подбор эксклюзивных туров, бронирование лучших отелей и полную поддержку клиента 24/7.
-        </p>
-        <p>
-            Мы работаем с клиентами индивидуально, учитываем их интересы и создаём уникальные путешествия.  
-            Наши специалисты помогут вам открыть новые страны, познакомиться с культурой и традициями, а также получить незабываемые впечатления.
-        </p>
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#about" class="mob-link">О компании</a>
+        <a href="#services" class="mob-link">Услуги</a>
+        <a href="#tours" class="mob-link">Туры</a>
+        <a href="#reviews" class="mob-link">Отзывы</a>
+        <a href="#contacts" class="mob-link">Контакты</a>
+        <a href="#contacts" class="mob-cta">Оставить заявку</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-grain"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-label">Индивидуальный туризм · с 2012 года</p>
+            <h1 class="hero-title">
+                Маршруты,<br>
+                <em>меняющие</em><br>
+                жизнь
+            </h1>
+            <p class="hero-sub">Мы создаём путешествия под вас — не шаблонные туры, а уникальные истории. Более 500 маршрутов по 60 странам мира.</p>
+            <div class="hero-actions">
+                <a href="#tours" class="btn-primary">Смотреть туры</a>
+                <a href="#about" class="btn-ghost">Узнать больше ↓</a>
+            </div>
+        </div>
+        <div class="hero-strip">
+            <div class="hero-strip-inner">
+                <div class="strip-item"><span class="strip-num">500+</span><span class="strip-lbl">маршрутов</span></div>
+                <div class="strip-divider"></div>
+                <div class="strip-item"><span class="strip-num">60</span><span class="strip-lbl">стран</span></div>
+                <div class="strip-divider"></div>
+                <div class="strip-item"><span class="strip-num">3 200+</span><span class="strip-lbl">довольных клиентов</span></div>
+                <div class="strip-divider"></div>
+                <div class="strip-item"><span class="strip-num">12</span><span class="strip-lbl">лет опыта</span></div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Прокрутите вниз</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <!-- Услуги -->
-    <section id="services">
-        <h2>Наши услуги</h2>
-        <div class="gallery">
-            <div class="card">
-                <img src="assets/expeditions.jpg" alt="Экспедиции">
-                <h3>Экспедиции</h3>
-                <p>Организация туров в горы, пустыни и другие уникальные места. Погрузитесь в атмосферу приключений.</p>
+    <section id="about" class="section-about">
+        <div class="about-grid">
+            <div class="about-label-col">
+                <span class="section-tag">О компании</span>
+                <div class="about-decoration"><div class="deco-circle"></div></div>
             </div>
-            <div class="card">
-                <img src="assets/guides.jpg" alt="Гиды">
-                <h3>Гиды</h3>
-                <p>Профессиональные гиды проведут вас по самым интересным маршрутам, расскажут истории и легенды.</p>
-            </div>
-            <div class="card">
-                <img src="assets/hotels.jpg" alt="Отели">
-                <h3>Отели</h3>
-                <p>Мы подберём лучшие отели для вашего отдыха — от уютных апартаментов до роскошных курортов.</p>
+            <div class="about-text-col">
+                <h2 class="section-title">Ведущее агентство<br><em>индивидуального туризма</em></h2>
+                <div class="about-body">
+                    <p>TravelWorld — туристическое агентство с 12-летним опытом работы, специализирующееся на создании индивидуальных маршрутов. Мы не продаём готовые пакеты — каждое путешествие разрабатывается с нуля под конкретного клиента.</p>
+                    <p>В нашей команде работает более 30 профессиональных гидов, логистов и travel-менеджеров. Мы сотрудничаем с отелями, авиакомпаниями и местными операторами в 60 странах мира, обеспечивая лучшие условия и цены.</p>
+                    <p>Каждый клиент получает персонального менеджера, который сопровождает с первого звонка до возвращения домой. Поддержка 24/7 — не просто слова: мы на связи в любое время суток.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feat-item"><span class="feat-icon">✓</span><span>Индивидуальный подход к каждому клиенту</span></div>
+                    <div class="feat-item"><span class="feat-icon">✓</span><span>Гарантия лучшей цены на отели и перелёты</span></div>
+                    <div class="feat-item"><span class="feat-icon">✓</span><span>Страховое сопровождение по всему маршруту</span></div>
+                    <div class="feat-item"><span class="feat-icon">✓</span><span>Помощь с визами и документами</span></div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat"><span class="stat-num">500+</span><span class="stat-label">маршрутов</span></div>
+                    <div class="stat"><span class="stat-num">12</span><span class="stat-label">лет опыта</span></div>
+                    <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">поддержка</span></div>
+                    <div class="stat"><span class="stat-num">4.9</span><span class="stat-label">рейтинг</span></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Контакты -->
-    <section id="contacts">
-        <h2>Контакты</h2>
-        <p>Email: info@travelworld.com</p>
-        <p>Телефон: +7 (777) 123-45-67</p>
-        <p>Адрес: г. Алматы, ул. Туристическая, 10</p>
+    <section id="services" class="section-services">
+        <div class="services-header">
+            <span class="section-tag">Услуги</span>
+            <h2 class="section-title">Что мы предлагаем</h2>
+            <p class="services-sub">Полный спектр услуг для незабываемого путешествия — от планирования маршрута до трансфера в отель.</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card" data-service="expeditions">
+                <div class="card-img-wrap">
+                    <img src="assets/expeditions.jpg" alt="Экспедиции">
+                </div>
+                <div class="card-body">
+                    <span class="card-num">01</span>
+                    <h3>Экспедиции</h3>
+                    <p>Организация туров в горы, пустыни, джунгли и другие уникальные уголки планеты. Погрузитесь в атмосферу настоящих приключений с профессиональным снаряжением и опытными гидами.</p>
+                    <ul class="card-list">
+                        <li>Трекинг и горные походы</li>
+                        <li>Сафари и дикая природа</li>
+                        <li>Арктические экспедиции</li>
+                        <li>Пустынные маршруты</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="card-price">от 85 000 ₸</span>
+                        <button class="card-btn" data-service="expeditions">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-service="guides">
+                <div class="card-img-wrap">
+                    <img src="assets/guides.jpg" alt="Гиды">
+                </div>
+                <div class="card-body">
+                    <span class="card-num">02</span>
+                    <h3>Гиды</h3>
+                    <p>Профессиональные гиды с глубоким знанием истории и культуры. Авторские маршруты, рассказы о легендах и тайнах местности, доступ к закрытым для обычных туристов местам.</p>
+                    <ul class="card-list">
+                        <li>Авторские экскурсии</li>
+                        <li>Гиды на 12+ языках</li>
+                        <li>Гастрономические туры</li>
+                        <li>Исторические маршруты</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="card-price">от 15 000 ₸ / день</span>
+                        <button class="card-btn" data-service="guides">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" data-service="hotels">
+                <div class="card-img-wrap">
+                    <img src="assets/hotels.jpg" alt="Отели">
+                </div>
+                <div class="card-body">
+                    <span class="card-num">03</span>
+                    <h3>Отели</h3>
+                    <p>Мы подберём идеальное размещение — от уютных бутик-отелей до роскошных курортов пяти звёзд. Гарантируем лучшую цену и подтверждение бронирования.</p>
+                    <ul class="card-list">
+                        <li>Бутик-отели и апартаменты</li>
+                        <li>Курорты 5★ по всему миру</li>
+                        <li>Эко-лоджи и глэмпинг</li>
+                        <li>Исторические резиденции</li>
+                    </ul>
+                    <div class="card-footer">
+                        <span class="card-price">подбор бесплатно</span>
+                        <button class="card-btn" data-service="hotels">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Футер -->
+    <section id="tours" class="section-tours">
+        <div class="tours-header">
+            <span class="section-tag">Популярные туры</span>
+            <h2 class="section-title">Готовые маршруты</h2>
+            <p class="tours-sub">Разработанные нашими экспертами маршруты, которые можно взять за основу и адаптировать под ваши пожелания.</p>
+        </div>
+        <div class="tours-grid">
+            <div class="tour-card">
+                <div class="tour-badge">Хит продаж</div>
+                <div class="tour-header-img" style="background:linear-gradient(135deg,#1a4a6b 0%,#0d2d42 100%)">
+                    <span class="tour-dest-icon">🏔️</span>
+                </div>
+                <div class="tour-info">
+                    <div class="tour-top"><span class="tour-dest">Непал · Гималаи</span><span class="tour-dur">14 дней</span></div>
+                    <h3 class="tour-name">Трекинг к базовому лагерю Эвереста</h3>
+                    <p class="tour-desc">Классический маршрут через Намче-Базар и Тенгбоче до базового лагеря на высоте 5 364 м. Все пермиты и сертифицированный гид включены.</p>
+                    <div class="tour-includes"><span>✓ Авиа</span><span>✓ Отели</span><span>✓ Гид</span><span>✓ Пермиты</span></div>
+                    <div class="tour-footer">
+                        <div class="tour-price-block"><span class="tour-price-from">от</span><span class="tour-price">320 000 ₸</span><span class="tour-price-per">/ чел</span></div>
+                        <a href="#contacts" class="tour-btn">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card">
+                <div class="tour-badge tour-badge-new">Новинка</div>
+                <div class="tour-header-img" style="background:linear-gradient(135deg,#7c4d28 0%,#3d2214 100%)">
+                    <span class="tour-dest-icon">🦁</span>
+                </div>
+                <div class="tour-info">
+                    <div class="tour-top"><span class="tour-dest">Кения · Танзания</span><span class="tour-dur">10 дней</span></div>
+                    <h3 class="tour-name">Большая миграция: сафари в Серенгети</h3>
+                    <p class="tour-desc">Наблюдение за знаменитой миграцией GNU и зебр. Проживание в луксовых лоджах прямо в саванне. Лучший период — июль–октябрь.</p>
+                    <div class="tour-includes"><span>✓ Авиа</span><span>✓ Лоджи</span><span>✓ Джипы</span><span>✓ Гид</span></div>
+                    <div class="tour-footer">
+                        <div class="tour-price-block"><span class="tour-price-from">от</span><span class="tour-price">480 000 ₸</span><span class="tour-price-per">/ чел</span></div>
+                        <a href="#contacts" class="tour-btn">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card">
+                <div class="tour-header-img" style="background:linear-gradient(135deg,#2a5c3f 0%,#142e1f 100%)">
+                    <span class="tour-dest-icon">🌿</span>
+                </div>
+                <div class="tour-info">
+                    <div class="tour-top"><span class="tour-dest">Коста-Рика</span><span class="tour-dur">12 дней</span></div>
+                    <h3 class="tour-name">Джунгли и вулканы Центральной Америки</h3>
+                    <p class="tour-desc">Нетронутые тропические леса, активные вулканы, черепашьи пляжи и уникальная дикая природа. Тур подходит для семей с детьми.</p>
+                    <div class="tour-includes"><span>✓ Авиа</span><span>✓ Эко-лоджи</span><span>✓ Трансфер</span><span>✓ Гид</span></div>
+                    <div class="tour-footer">
+                        <div class="tour-price-block"><span class="tour-price-from">от</span><span class="tour-price">290 000 ₸</span><span class="tour-price-per">/ чел</span></div>
+                        <a href="#contacts" class="tour-btn">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tour-card">
+                <div class="tour-header-img" style="background:linear-gradient(135deg,#4a3060 0%,#1e1030 100%)">
+                    <span class="tour-dest-icon">🌌</span>
+                </div>
+                <div class="tour-info">
+                    <div class="tour-top"><span class="tour-dest">Исландия</span><span class="tour-dur">8 дней</span></div>
+                    <h3 class="tour-name">Северное сияние и ледники Исландии</h3>
+                    <p class="tour-desc">Охота за северным сиянием, водопады Сельяландсфосс и Скоугафосс, ледниковая лагуна Йёкюльсарлон. Группа до 8 человек.</p>
+                    <div class="tour-includes"><span>✓ Авиа</span><span>✓ Отели</span><span>✓ Авто</span><span>✓ Гид</span></div>
+                    <div class="tour-footer">
+                        <div class="tour-price-block"><span class="tour-price-from">от</span><span class="tour-price">350 000 ₸</span><span class="tour-price-per">/ чел</span></div>
+                        <a href="#contacts" class="tour-btn">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tours-cta-wrap">
+            <p>Не нашли подходящий тур? Мы разработаем маршрут именно под вас.</p>
+            <a href="#contacts" class="btn-primary">Создать индивидуальный тур</a>
+        </div>
+    </section>
+
+    <section id="reviews" class="section-reviews">
+        <div class="reviews-header">
+            <span class="section-tag">Отзывы</span>
+            <h2 class="section-title">Что говорят<br><em>наши клиенты</em></h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">«Гималайский трекинг превзошёл все ожидания. Гид знал каждый камень на маршруте и рассказывал захватывающие истории о местных традициях. Логистика была идеальной — ни одной накладки за 14 дней.»</p>
+                <div class="review-author">
+                    <div class="review-avatar">АМ</div>
+                    <div>
+                        <span class="review-name">Алексей Морозов</span>
+                        <span class="review-trip">Трекинг в Непале, сентябрь 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">«Сафари в Кении — лучшее решение в нашей жизни. TravelWorld подобрал лодж у реки Мара, и мы наблюдали переправу тысяч животных из окна номера. Всё включено, никаких сюрпризов с ценами.»</p>
+                <div class="review-author">
+                    <div class="review-avatar">ЕС</div>
+                    <div>
+                        <span class="review-name">Елена и Кирилл Савельевы</span>
+                        <span class="review-trip">Сафари в Кении, август 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">«Северное сияние — это магия. Команда подобрала идеальные даты, когда активность была максимальной. Отель прямо на льду, горячие источники, дружелюбная группа — уезжать не хотелось.»</p>
+                <div class="review-author">
+                    <div class="review-avatar">ДВ</div>
+                    <div>
+                        <span class="review-name">Диана Волкова</span>
+                        <span class="review-trip">Северное сияние, Исландия, февраль 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-rating">
+            <div class="rating-block">
+                <span class="rating-big">4.9</span>
+                <div class="rating-info">
+                    <span class="rating-stars">★★★★★</span>
+                    <span class="rating-count">на основе 847 отзывов</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-faq">
+        <div class="faq-inner">
+            <div class="faq-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Часто задаваемые<br><em>вопросы</em></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-q">Сколько времени занимает разработка индивидуального маршрута?<span class="faq-icon">+</span></button>
+                    <div class="faq-a"><p>Стандартный маршрут разрабатывается за 3–5 рабочих дней. Для сложных экспедиций — до 2 недель. После первой консультации менеджер называет точный срок.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Нужна ли виза? Вы помогаете с оформлением?<span class="faq-icon">+</span></button>
+                    <div class="faq-a"><p>Да, мы сопровождаем процесс оформления визы: готовим документы, заполняем анкеты, записываем на подачу. Многие направления доступны гражданам Казахстана без визы — уточняем актуальные требования.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Что входит в стоимость тура?<span class="faq-icon">+</span></button>
+                    <div class="faq-a"><p>Состав пакета указан на странице каждого тура. Как правило: авиаперелёт, трансфер, проживание, услуги гида, входные билеты и разрешения. Питание включается по запросу. Всё, что не входит — прозрачно указывается заранее.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Можно ли отменить или перенести тур?<span class="faq-icon">+</span></button>
+                    <div class="faq-a"><p>За 45+ дней — полный возврат аванса. За 30–44 дня — возврат 70%. Перенос тура возможен без штрафа за 30+ дней до старта. Каждый случай рассматривается индивидуально.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q">Есть ли туры для детей или людей с ограниченными возможностями?<span class="faq-icon">+</span></button>
+                    <div class="faq-a"><p>Мы специализируемся на семейных поездках и адаптируем маршруты под любой возраст. Для путешественников с ограниченными возможностями подбираем доступные отели, транспорт и маршруты. Просто сообщите при первом обращении.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="section-contacts">
+        <div class="contacts-inner">
+            <div class="contacts-left">
+                <span class="section-tag">Контакты</span>
+                <h2 class="section-title">Начните своё<br><em>путешествие</em></h2>
+                <p class="contacts-sub">Оставьте заявку, и наш менеджер свяжется с вами в течение 30 минут. Первая консультация — бесплатно.</p>
+                <div class="contact-items">
+                    <div class="contact-item"><span class="contact-icon">✉</span><div><span class="contact-type">Email</span><a href="mailto:info@travelworld.kz">info@travelworld.kz</a></div></div>
+                    <div class="contact-item"><span class="contact-icon">✆</span><div><span class="contact-type">Телефон / WhatsApp</span><a href="tel:+77771234567">+7 (777) 123-45-67</a></div></div>
+                    <div class="contact-item"><span class="contact-icon">◎</span><div><span class="contact-type">Офис</span><span>г. Алматы, пр. Достык, 12, офис 304</span></div></div>
+                    <div class="contact-item"><span class="contact-icon">⏰</span><div><span class="contact-type">Режим работы</span><span>Пн–Пт: 9:00–19:00 · Сб: 10:00–16:00</span></div></div>
+                </div>
+                <div class="socials">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Telegram</a>
+                    <a href="#" class="social-link">WhatsApp</a>
+                </div>
+            </div>
+            <div class="contacts-right">
+                <form class="contact-form" id="contact-form" novalidate>
+                    <h3 class="form-title">Оставить заявку</h3>
+                    <div class="form-row">
+                        <div class="form-group"><label for="f-name">Имя *</label><input type="text" id="f-name" name="name" placeholder="Ваше имя" required></div>
+                        <div class="form-group"><label for="f-phone">Телефон *</label><input type="tel" id="f-phone" name="phone" placeholder="+7 (___) ___-__-__" required></div>
+                    </div>
+                    <div class="form-group"><label for="f-email">Email</label><input type="email" id="f-email" name="email" placeholder="example@mail.com"></div>
+                    <div class="form-group"><label for="f-dest">Направление / страна</label><input type="text" id="f-dest" name="destination" placeholder="Например: Непал, Исландия, Кения…"></div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="f-people">Количество человек</label>
+                            <select id="f-people" name="people"><option value="">Выберите</option><option>1 человек</option><option>2 человека</option><option>3–5 человек</option><option>6–10 человек</option><option>Больше 10</option></select>
+                        </div>
+                        <div class="form-group"><label for="f-budget">Бюджет на человека</label>
+                            <select id="f-budget" name="budget"><option value="">Выберите</option><option>До 100 000 ₸</option><option>100–300 000 ₸</option><option>300–500 000 ₸</option><option>Свыше 500 000 ₸</option></select>
+                        </div>
+                    </div>
+                    <div class="form-group"><label for="f-msg">Комментарий</label><textarea id="f-msg" name="message" placeholder="Расскажите о пожеланиях, датах поездки или задайте вопрос…" rows="4"></textarea></div>
+                    <button type="submit" class="form-submit"><span class="submit-text">Отправить заявку</span><span class="submit-arrow">→</span></button>
+                    <p class="form-note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</p>
+                </form>
+                <div class="form-success" id="form-success">
+                    <span class="success-icon">✓</span>
+                    <h3>Заявка отправлена!</h3>
+                    <p>Наш менеджер свяжется с вами в течение 30 минут. Проверьте WhatsApp или телефон.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>© 2026 TravelWorld. Все права защищены.</p>
-        <p>Мы в соцсетях: Instagram | Facebook | Telegram</p>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <a href="#" class="logo"><span class="logo-icon">✦</span><span class="logo-text">Travel<em>World</em></span></a>
+                <p class="footer-tagline">Маршруты, меняющие жизнь</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="#about">О компании</a>
+                <a href="#services">Услуги</a>
+                <a href="#tours">Туры</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <div class="footer-right">
+                <p>© 2026 TravelWorld. Все права защищены.</p>
+                <p>Лицензия туроператора №ТО-2012-0847</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- Скрипт -->
     <script src="js/main.js"></script>
 </body>
 </html>
